@@ -22,6 +22,12 @@
       window.addEventListener('offline', () => {
         console.log('user offline')
       })
+
+      window.navigator.getBattery().then((battery) => {
+       battery.onchargingchange = () => {
+         console.log(battery.charging)
+       }
+      });
     </script>
   </body>
 </html>
